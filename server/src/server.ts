@@ -2,8 +2,8 @@ import 'dotenv/config'
 
 import fastify from 'fastify'
 import cors from '@fastify/cors'
-import multipart from '@fastify/multipart'
 import jwt from '@fastify/jwt'
+import multipart from '@fastify/multipart'
 import { memoriesRoutes } from './routes/memories'
 import { authRoutes } from './routes/auth'
 import { uploadRoutes } from './routes/upload'
@@ -23,7 +23,7 @@ app.register(cors, {
 })
 
 app.register(jwt, {
-  secret: '21h3o4323k42l',
+  secret: 'spacetime',
 })
 
 app.register(authRoutes)
@@ -37,5 +37,5 @@ app
     // host: '0.0.0.0',
   })
   .then(() => {
-    console.log('🚀 HTTP server running on http://localhost:3333')
+    console.log('🚀 HTTP server running on port http://localhost:3333')
   })

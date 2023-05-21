@@ -32,10 +32,8 @@ export async function uploadRoutes(app: FastifyInstance) {
     const fileName = fileId.concat(extension)
 
     const writeStream = createWriteStream(
-      resolve(__dirname, '../../uploads/', fileName),
+      resolve(__dirname, '..', '..', 'uploads', fileName),
     )
-
-    // Amazon S3, Google GCS, Cloudflare R2
 
     await pump(upload.file, writeStream)
 
